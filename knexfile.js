@@ -13,4 +13,4 @@ module.exports = {
       },
       useNullAsDefault: true, // required for SQLite
     }
-  
+  };
