@@ -1,16 +1,24 @@
-module.exports = {
+const common = {
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    migrations: { directory: './data/migrations' },
+    seeds: { directory: './data/seeds' },
+  }
+  
+  module.exports = {
     development: {
-      client: 'sqlite3', // or 'pg', 'mysql', etc. based on your database
+      ...common,
       connection: {
-        filename: './dev.sqlite3' // path to your SQLite database file
+        filename: './data/hobbits.db3',
       },
-      useNullAsDefault: true, // required for SQLite
     },
     testing: {
-      client: 'sqlite3', // or 'pg', 'mysql', etc. based on your database
+      ...common,
       connection: {
-        filename: './test.sqlite3' // path to your testing SQLite database file
+        filename: './data/test.db3',
       },
-      useNullAsDefault: true, // required for SQLite
-    }
+    },
+    production: {
+  
+    },
   };
