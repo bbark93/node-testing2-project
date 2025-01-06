@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable("jokes", (tbl) => {
     tbl.increments("joke_id");
-    tbl.text("joke").notnullable();
-    tbl.text("punchline").notnullable();
+    tbl.text("joke").notNullable();
+    tbl.text("punchline").notNullable();
   });
 };
 
